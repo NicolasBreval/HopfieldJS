@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="Hopfield.js"></script>
+    <script src="test.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="test.css" />
+</head>
+
+<body>
+    <div id="patternsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+               <div class="modal-header">
+                   <h4 class="modal-title">Training patterns</h4>
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               <div class="modal-body">
+
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               </div> 
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row controls">
+            <div class="col-6">
+                <h4>Select patterns size</h4>
+                <div class="row">
+                    <div class="col-6 pattern-label">
+                        <label for="height">height</label>
+                    </div>
+                    <div class="col-6">
+                        <input class="pattern-input" id="height" type="number" name="height" min="1" value="5" onchange="createGrids()" />
+                    </div>
+                    <div class="col-6 pattern-label">
+                        <label for="width">widht</label>
+                    </div>
+                    <div class="col-6">
+                        <input class="pattern-input" id="width" type="number" name="width" min="1" value="5" onchange="createGrids()" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 btns">
+                <button class="btn btn-primary btn-xs" type="button" id="blockGrid" onclick="changeGridStatus()">Unblock</button>
+                <button class="btn btn-primary btn-xs" type="button" id="clearGrid" onclick="clearGrids()">Clear</button>
+                <button class="btn btn-primary btn-xs" type="button" id="train" onclick="trainNetwork()">Train</button>
+                <button class="btn btn-primary btn-xs" type="button" id="predict" onclick="predictPattern()">Predict</button>
+                <button class="btn btn-primary btn-xs" type="button" id="trainingPatterns" data-toggle="modal" data-target="#patternsModal" onclick="paintPatternsInModal()">Show training patterns</button>
+                <button class="btn btn-primary btn-xs" type="button" id="clearNetwork" onclick="clearNetwork()">Clear network</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div id="inputGrid" class="grid"></div>
+                <h4>INPUT PATTERN</h4>
+            </div>
+            <div class="col-6">
+                <div id="outputGrid" class="grid"></div>
+                <h4>PREDICTION RESULT</h4>
+            </div>
+        </div>
+    </div>
+</body>

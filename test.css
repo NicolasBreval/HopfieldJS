@@ -1,0 +1,57 @@
+.grid {
+    display: grid;
+    margin-top: 20%;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20vw;
+    height: 20vw;
+}
+
+.grid>div {
+    border-color: black;
+    border-style: groove;
+    padding: 5px;
+}
+
+.pattern-label {
+    text-align: right;
+}
+
+.pattern-input {
+    width: 50%;
+}
+
+h4 {
+    text-align: center;
+}
+
+.controls {
+    background-color: cornflowerblue;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btns > button {
+    margin: 0.5%;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+.modal-header {
+    background-color: cornflowerblue;
+}
+
+.modal-body {
+    background-color: aliceblue;
+}
+
+.modal-footer {
+    background-color: cornflowerblue;
+}
