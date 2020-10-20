@@ -234,7 +234,7 @@ class HopfieldNetwork {
     train(pattern) {
         this.trainingPatterns.push(new Matrix(1, pattern.width, pattern.data));
 
-        this.weights = new Matrix(neurons, neurons); 
+        this.weights = new Matrix(this.neurons, this.neurons); 
 
         let rho = this.trainingPatterns.reduce((a, b) => a.add(b)).data[0].reduce((a, b) => a + b) / (this.trainingPatterns.length * this.neurons);
         let subPattern = null;
